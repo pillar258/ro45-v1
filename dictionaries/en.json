@@ -1,0 +1,195 @@
+{
+  "nav": {
+    "home": "Home",
+    "about": "About Us",
+    "licensedCoprorations": "Licensed Corporations",
+    "licenseApplication": "License Application",
+    "licenseSale": "License For Sale",
+    "licenseAcquisition": "License Acquisition",
+    "roInformation": "RO Information",
+    "cptCourses": "CPT Courses",
+    "events": "Events",
+    "membership": "Membership",
+    "posts": "Posts",
+    "guestbook": "Guestbook",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "login": "Login"
+  },
+  "hero": {
+    "title": "HKIFA 18th Annual Conference - June 23, 2025",
+    "subtitle": "Educational animation series, representation, retail funds and MPF overview showcased here.",
+    "cta": "Learn more"
+  },
+  "sections": {
+    "education": "Educational Animation Series",
+    "represent": "Who We Represent",
+    "retail": "Retail Funds",
+    "mpf": "MPF Overview"
+  },
+  "pages": {
+    "events": "Events",
+    "membership": "Membership",
+    "login": "Login",
+    "signup": "Signup",
+    "verify": "Email Verification",
+    "dashboard": "Dashboard",
+    "admin": "Admin",
+    "guestbook": "Guestbook",
+    "posts": "Posts",
+    "postDetail": "Post Detail"
+  },
+  "about_page": {
+    "title": "About Us",
+    "description": "An open industry community and publishing platform for financial professionals.",
+    "core_principles": "Our Core Principles",
+    "shaping_the_future": "Shaping the Future of Finance",
+    "vision_title": "Our Vision",
+    "vision_text": "To be the leading platform connecting financial institutions, professionals, and opportunities across Asia.",
+    "mission_title": "Our Mission",
+    "mission_text": "To simplify compliance, foster talent, and facilitate growth within the financial services industry through technology and expertise.",
+    "values_title": "Our Values",
+    "values_text": "Integrity, Professionalism, and Innovation. We are committed to upholding the highest standards in all our interactions and solutions.",
+    "team_title": "Meet Our Team",
+    "team_subtitle": "Dedicated professionals with a passion for finance and technology."
+  },
+  "ro_information_page": {
+        "title": "RO Information"
+    },
+    "cpt_courses_page": {
+        "subtitle": "Stay ahead with our professional CPT courses designed for financial practitioners.",
+        "hours_label": "Hours"
+    },
+  "forms": {
+    "submit": "Submit",
+    "submitting": "Submitting...",
+    "submission_success": "Submission successful!",
+    "submission_failed": "Submission failed: {error}",
+    "applicant_type": "Applicant Type",
+    "company": "Company",
+    "individual": "Individual",
+    "applicant_name": "Applicant Name",
+    "location": "Location",
+    "industry_domain": "Industry and Domain",
+    "other_industry": "Other Industry (Please specify)",
+    "license_types_applied": "License Types Applied For",
+    "has_ro_candidate": "Do you have a Responsible Officer (RO) candidate?",
+    "yes": "Yes",
+    "no": "No",
+    "contact_phone": "Contact Phone",
+    "email": "Email",
+    "wechat": "WeChat (Optional)",
+    "license_types_sought": "License Types Sought",
+    "budget": "Budget (Optional)",
+    "ro_profile_form": {
+      "title": "I am an RO",
+      "name_en": "English Name",
+      "name_en_placeholder": "e.g., Chan Tai Man",
+      "name_zh": "Chinese Name (Optional)",
+      "name_zh_placeholder": "e.g., 陳大文",
+      "central_entity_number": "CE Number (Optional)",
+      "license_types": "Licensed Activities",
+      "industry_experience": "Industry Experience (Years)",
+      "languages": "Languages Spoken",
+      "is_director": "Willing to act as a director",
+      "is_hong_kong_resident": "Hong Kong Permanent Resident",
+      "availability_date": "Available From (Optional)",
+      "expected_salary": "Expected Monthly Salary (HKD, Optional)",
+      "contact_phone": "Contact Phone",
+      "email": "Email Address",
+      "cv_upload": "Upload CV (PDF, DOC, DOCX)",
+      "submit": "Submit Profile",
+      "submitting": "Submitting...",
+      "validation": {
+        "name_en_required": "English name is required",
+        "license_types_required": "Please select at least one license type",
+        "phone_required": "Phone number is required",
+        "email_invalid": "Invalid email address"
+      },
+      "license_options": {
+        "type1": "Type 1: Dealing in Securities",
+        "type2": "Type 2: Dealing in Futures Contracts",
+        "type3": "Type 3: Leveraged Foreign Exchange Trading",
+        "type4": "Type 4: Advising on Securities",
+        "type5": "Type 5: Advising on Futures Contracts",
+        "type6": "Type 6: Advising on Corporate Finance",
+        "type7": "Type 7: Providing Automated Trading Services",
+        "type8": "Type 8: Securities Margin Financing",
+        "type9": "Type 9: Asset Management",
+        "type10": "Type 10: Providing Credit Rating Services"
+      },
+      "language_options": {
+        "english": "English",
+        "cantonese": "Cantonese",
+        "mandarin": "Mandarin"
+      }
+    },
+    "ro_search_form": {
+      "title": "Find an RO",
+      "license_types": "Licensed Activities",
+      "industry_experience": "Minimum Industry Experience (Years)",
+      "languages": "Languages Spoken",
+      "is_director": "Willing to act as a director",
+      "is_hong_kong_resident": "Hong Kong Permanent Resident",
+      "search_button": "Search ROs",
+      "searching_button": "Searching..."
+    },
+    "license_sale_form": {
+      "title": "Sell a License",
+      "license_types": "License Types for Sale",
+      "license_types_desc": "Select the license types included in the sale.",
+      "has_legal_entity": "Includes Legal Entity?",
+      "has_bank_account": "Includes Bank Account?",
+      "ro_count": "Number of Responsible Officers (ROs)",
+      "asking_price": "Asking Price (HKD)",
+      "asking_price_desc": "Enter the amount in Hong Kong Dollars.",
+      "validation": {
+        "license_types_required": "Please select at least one license type.",
+        "field_required": "This field is required.",
+        "positive_number_required": "Please enter a positive number.",
+        "phone_required": "Phone number is required.",
+        "email_invalid": "Invalid email address."
+      }
+    }
+  },
+  "dashboard_hero": {
+    "slides": [
+      {
+        "title": "License Application & Acquisition",
+        "description": "Streamlining the process of applying for and acquiring financial licenses with expert guidance.",
+        "icon_name": "ShieldCheck"
+      },
+      {
+        "title": "Responsible Officer (RO) Solutions",
+        "description": "Connecting firms with qualified ROs and providing comprehensive support for compliance.",
+        "icon_name": "UserTie"
+      },
+      {
+        "title": "CPT Courses & Professional Training",
+        "description": "Offering a wide range of Continuous Professional Training courses to keep you ahead in the industry.",
+        "icon_name": "GraduationCap"
+      },
+      {
+        "title": "Licensed Corporations & M&A",
+        "description": "Facilitating the sale and acquisition of licensed corporations and providing M&A advisory.",
+        "icon_name": "Building"
+      }
+    ]
+  },
+  "stats_strip": {
+    "marketTrends": "Market Trends",
+    "membership": "Membership",
+    "membershipValue": "Global/Regional/Mainland/HK",
+    "compliance": "Compliance & Education",
+    "complianceValue": "Animation/Guides/Practice"
+  },
+  "partners_strip": {
+    "title": "Partners/Members"
+  },
+  "cta_section": {
+    "title": "Join us to amplify industry impact",
+    "subtitle": "Publish research and insights, join high-quality events and grow AM industry network.",
+    "signUp": "Sign up",
+    "seeBenefits": "See benefits"
+  }
+}

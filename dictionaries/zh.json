@@ -1,0 +1,195 @@
+{
+  "nav": {
+    "home": "首页",
+    "about": "关于我们",
+    "licensedCoprorations": "持牌法团",
+    "licenseApplication": "牌照申请",
+    "licenseSale": "牌照出售",
+    "licenseAcquisition": "牌照收购",
+    "roInformation": "RO资讯",
+    "cptCourses": "CPT课程",
+    "events": "活动",
+    "membership": "会员",
+    "posts": "文章",
+    "guestbook": "留言墙",
+    "dashboard": "会员中心",
+    "admin": "管理后台",
+    "login": "登录"
+  },
+  "hero": {
+    "title": "HKIFA 第18届年度大会 - 2025年6月23日",
+    "subtitle": "教育动画系列、我们代表谁、零售基金与 MPF 概览等模块将在此呈现。",
+    "cta": "了解详情"
+  },
+  "sections": {
+    "education": "教育动画系列",
+    "represent": "我们代表谁",
+    "retail": "零售基金",
+    "mpf": "MPF 概览"
+  },
+  "pages": {
+    "events": "活动",
+    "membership": "会员介绍",
+    "login": "登录",
+    "signup": "注册",
+    "verify": "邮箱验证",
+    "dashboard": "会员中心",
+    "admin": "管理后台",
+    "guestbook": "留言墙",
+    "posts": "文章",
+    "postDetail": "文章详情"
+  },
+  "about_page": {
+    "title": "关于我们",
+    "description": "一个为金融专业人士打造的开放式行业社区与发布平台。",
+    "core_principles": "我们的核心原则",
+    "shaping_the_future": "塑造金融未来",
+    "vision_title": "我们的愿景",
+    "vision_text": "成为连接亚洲金融机构、专业人士和机遇的领先平台。",
+    "mission_title": "我们的使命",
+    "mission_text": "通过技术和专业知识，简化合规流程、培养人才、促进行业发展。",
+    "values_title": "我们的价值观",
+    "values_text": "诚信、专业、创新。我们致力于在所有互动和解决方案中坚持最高标准。",
+    "team_title": "认识我们的团队",
+    "team_subtitle": "一群对金融和技术充满热情的专业人士。"
+  },
+  "ro_information_page": {
+        "title": "RO资讯"
+    },
+    "cpt_courses_page": {
+        "subtitle": "通过我们为金融从业者设计的专业CPT课程，保持行业领先地位。",
+        "hours_label": "小时"
+    },
+  "forms": {
+    "submit": "提交",
+    "submitting": "提交中...",
+    "submission_success": "提交成功！",
+    "submission_failed": "提交失败：{error}",
+    "applicant_type": "申请人类别",
+    "company": "公司",
+    "individual": "个人",
+    "applicant_name": "申请人名称",
+    "location": "所在地",
+    "industry_domain": "所属行业及领域",
+    "other_industry": "其他行业（请注明）",
+    "license_types_applied": "拟申请牌照类别",
+    "has_ro_candidate": "是否有RO人选",
+    "yes": "是",
+    "no": "否",
+    "contact_phone": "联系电话",
+    "email": "电子邮箱",
+    "wechat": "微信号（选填）",
+    "license_types_sought": "拟收购牌照类别",
+    "budget": "预算（选填）",
+    "ro_profile_form": {
+      "title": "我是RO",
+      "name_en": "英文姓名",
+      "name_en_placeholder": "例如：Chan Tai Man",
+      "name_zh": "中文姓名（选填）",
+      "name_zh_placeholder": "例如：陈大文",
+      "central_entity_number": "中央编号（选填）",
+      "license_types": "牌照类别",
+      "industry_experience": "行业经验（年）",
+      "languages": "语言能力",
+      "is_director": "愿意担任董事",
+      "is_hong_kong_resident": "香港永久居民",
+      "availability_date": "可到岗日期（选填）",
+      "expected_salary": "期望月薪（港币，选填）",
+      "contact_phone": "联系电话",
+      "email": "电子邮箱",
+      "cv_upload": "上传简历（PDF, DOC, DOCX）",
+      "submit": "提交资料",
+      "submitting": "提交中...",
+      "validation": {
+        "name_en_required": "请输入英文姓名",
+        "license_types_required": "请至少选择一个牌照类别",
+        "phone_required": "请输入联系电话",
+        "email_invalid": "邮箱地址格式不正确"
+      },
+      "license_options": {
+        "type1": "第1类：证券交易",
+        "type2": "第2类：期货合约交易",
+        "type3": "第3类：杠杆式外汇交易",
+        "type4": "第4类：就证券提供意见",
+        "type5": "第5类：就期货合约提供意见",
+        "type6": "第6类：就机构融资提供意见",
+        "type7": "第7类：提供自动化交易服务",
+        "type8": "第8类：证券保证金融资",
+        "type9": "第9类：提供资产管理",
+        "type10": "第10类：提供信贷评级服务"
+      },
+      "language_options": {
+        "english": "英语",
+        "cantonese": "广东话",
+        "mandarin": "普通话"
+      }
+    },
+    "ro_search_form": {
+      "title": "寻找RO",
+      "license_types": "牌照类别",
+      "industry_experience": "最低行业经验（年）",
+      "languages": "语言能力",
+      "is_director": "愿意担任董事",
+      "is_hong_kong_resident": "香港永久居民",
+      "search_button": "搜索RO",
+      "searching_button": "搜索中..."
+    },
+    "license_sale_form": {
+      "title": "出售牌照",
+      "license_types": "待售牌照类别",
+      "license_types_desc": "请选择此次出售包含的牌照类别。",
+      "has_legal_entity": "是否包含法人实体？",
+      "has_bank_account": "是否包含银行账户？",
+      "ro_count": "负责人员（RO）数量",
+      "asking_price": "期望售价（港币）",
+      "asking_price_desc": "请输入以港币计价的金额。",
+      "validation": {
+        "license_types_required": "请至少选择一个牌照类别。",
+        "field_required": "此字段为必填项。",
+        "positive_number_required": "请输入一个正数。",
+        "phone_required": "请输入联系电话。",
+        "email_invalid": "邮箱地址格式不正确。"
+      }
+    }
+  },
+  "dashboard_hero": {
+    "slides": [
+      {
+        "title": "牌照申请与收购",
+        "description": "在专家指导下，简化金融牌照的申请与收购流程。",
+        "icon_name": "ShieldCheck"
+      },
+      {
+        "title": "负责人员（RO）解决方案",
+        "description": "为公司匹配合格的RO，并为合规提供全面支持。",
+        "icon_name": "UserTie"
+      },
+      {
+        "title": "CPT课程与专业培训",
+        "description": "提供广泛的持续专业培训课程，助您在行业中保持领先。",
+        "icon_name": "GraduationCap"
+      },
+      {
+        "title": "持牌法团与并购咨询",
+        "description": "促进持牌法团的买卖交易，并提供专业的并购咨询服务。",
+        "icon_name": "Building"
+      }
+    ]
+  },
+  "stats_strip": {
+    "marketTrends": "市场趋势",
+    "membership": "会员覆盖",
+    "membershipValue": "全球/区域/内地/香港",
+    "compliance": "合规教育",
+    "complianceValue": "动画/指引/实践"
+  },
+  "partners_strip": {
+    "title": "合作伙伴/会员单位"
+  },
+  "cta_section": {
+    "title": "加入我们，提升行业影响力",
+    "subtitle": "发布研究与观点、参与高质量活动、拓展资管行业人脉。",
+    "signUp": "立即注册",
+    "seeBenefits": "了解权益"
+  }
+}
