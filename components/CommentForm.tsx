@@ -4,10 +4,11 @@ import { Input } from './ui/input'
 import { Textarea } from './ui/textarea'
 import { Button } from './ui/button'
 import { getSupabaseClient } from '../lib/supabaseClient'
+import type { Locale } from '@/i18n'
 import { useRouter } from 'next/navigation'
 
-export default function CommentForm({ locale, postId, onSubmitted }: { locale: 'zh' | 'en'; postId: string; onSubmitted?: () => void }) {
-  const zh = locale==='zh'
+export default function CommentForm({ locale, postId, onSubmitted }: { locale: Locale; postId: string; onSubmitted?: () => void }) {
+  const zh = locale!=='en'
   const [authorName, setAuthorName] = useState('')
   const [content, setContent] = useState('')
   const [loading, setLoading] = useState(false)

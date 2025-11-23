@@ -5,8 +5,9 @@ import { Input } from '../../components/ui/input'
 import { Button } from '../../components/ui/button'
 import { createClient } from '@/utils/supabase/client'
 import Link from 'next/link'
+import type { Locale } from '@/i18n'
 
-export default function SignupForm({ locale }: { locale: 'zh' | 'en' }) {
+export default function SignupForm({ locale }: { locale: Locale }) {
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const [loading, setLoading] = useState(false)

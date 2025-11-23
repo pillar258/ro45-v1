@@ -37,7 +37,7 @@ export function RoProfileForm({ dict }: { dict: any }) {
   const [cvFile, setCvFile] = useState<File | null>(null);
   const formSchema = createFormSchema(dict);
 
-  const { register, handleSubmit, formState: { errors }, control, reset } = useForm<FormData>({
+  const { register, handleSubmit, formState: { errors }, control, reset } = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       license_types: [],
@@ -58,7 +58,7 @@ export function RoProfileForm({ dict }: { dict: any }) {
     }
   };
 
-  const onSubmit = (data: FormData) => {
+  const onSubmit = (data: any) => {
     startTransition(async () => {
       let cvUrl = '';
 

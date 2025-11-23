@@ -33,7 +33,7 @@ export function LicenseSaleForm({ dict }: { dict: any }) {
 
   const formSchema = createLicenseSaleSchema(t);
 
-  const form = useForm<LicenseSaleFormValues>({
+  const form = useForm({
     resolver: zodResolver(formSchema),
     defaultValues: {
       license_types: [],
@@ -41,7 +41,7 @@ export function LicenseSaleForm({ dict }: { dict: any }) {
     },
   });
 
-  const onSubmit = (values: LicenseSaleFormValues) => {
+  const onSubmit = (values: any) => {
     startTransition(async () => {
       try {
         const response = await fetch('/api/license-sales', {
@@ -181,7 +181,12 @@ export function LicenseSaleForm({ dict }: { dict: any }) {
                     <FormItem>
                     <FormLabel className="font-semibold">{t.ro_count}</FormLabel>
                     <FormControl>
-                        <Input type="number" placeholder="e.g., 1" {...field} />
+                        <Input
+                          type="number"
+                          placeholder="e.g., 1"
+                          value={typeof field.value === 'number' ? field.value : Number(field.value ?? 0)}
+                          onChange={e => field.onChange(Number((e.target as HTMLInputElement).value))}
+                        />
                     </FormControl>
                     <FormMessage />
                     </FormItem>
@@ -194,7 +199,12 @@ export function LicenseSaleForm({ dict }: { dict: any }) {
                     <FormItem>
                     <FormLabel className="font-semibold">{t.asking_price}</FormLabel>
                     <FormControl>
-                        <Input type="number" placeholder="e.g., 5000000" {...field} />
+                        <Input
+                          type="number"
+                          placeholder="e.g., 5000000"
+                          value={typeof field.value === 'number' ? field.value : Number(field.value ?? 0)}
+                          onChange={e => field.onChange(Number((e.target as HTMLInputElement).value))}
+                        />
                     </FormControl>
                     <FormDescription>{t.asking_price_desc}</FormDescription>
                     <FormMessage />

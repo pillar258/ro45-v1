@@ -2,8 +2,9 @@
 import { useEffect, useState } from 'react'
 import { Button } from '../../../../components/ui/button'
 import { getSupabaseClient, isSupabaseConfigured } from '../../../../lib/supabaseClient'
+import type { Locale } from '../../../../i18n'
 
-export default function DashboardContent({ locale }: { locale: 'zh' | 'en' }) {
+export default function DashboardContent({ locale }: { locale: Locale }) {
   const [userEmail, setUserEmail] = useState('')
   const [confirmed, setConfirmed] = useState<boolean | null>(null)
   const [configured, setConfigured] = useState(true)

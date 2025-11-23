@@ -1,5 +1,4 @@
-import { createServerComponentClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
+import { createClient } from '@/utils/supabase/server';
 import { notFound } from 'next/navigation';
 import { getDictionary } from '../../../../lib/getDictionary';
 import { Locale } from '../../../../i18n';
@@ -9,7 +8,7 @@ export default async function LicensedCorporationDetailPage({
 }: { 
   params: { locale: Locale, id: string } 
 }) {
-  const supabase = createServerComponentClient({ cookies });
+  const supabase = createClient();
   const dict = await getDictionary(locale);
 
   const { data: corp, error } = await supabase

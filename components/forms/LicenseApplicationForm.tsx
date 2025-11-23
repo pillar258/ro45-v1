@@ -25,7 +25,7 @@ const formSchema = z.object({
   industry_and_domain: z.array(z.string()).optional(),
   other_industry: z.string().optional(),
   license_types_applied: z.array(z.string()).nonempty('Please select at least one license type'),
-  has_ro_candidate: z.boolean().default(false),
+  has_ro_candidate: z.boolean().optional(),
   contact_phone: z.string().min(8, 'Phone number is required'),
   email: z.string().email('Invalid email address'),
   wechat: z.string().optional(),

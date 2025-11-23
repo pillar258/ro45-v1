@@ -1,9 +1,8 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
+import { createClient } from '@/utils/supabase/server';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
-  const supabase = createRouteHandlerClient({ cookies });
+  const supabase = createClient();
   const { data: { session } } = await supabase.auth.getSession();
 
   // While the form might be public to view, submitting a search request should likely be for authenticated users.

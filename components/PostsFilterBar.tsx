@@ -1,8 +1,9 @@
 "use client"
 import { usePathname, useRouter, useSearchParams } from 'next/navigation'
+import type { Locale } from '@/i18n'
 
-export default function PostsFilterBar({ locale }: { locale: 'zh' | 'en' }) {
-  const zh = locale==='zh'
+export default function PostsFilterBar({ locale }: { locale: Locale }) {
+  const zh = locale!=='en'
   const router = useRouter()
   const pathname = usePathname()
   const sp = useSearchParams()

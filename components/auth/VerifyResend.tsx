@@ -2,8 +2,9 @@
 import { useState } from 'react'
 import { Button } from '../../components/ui/button'
 import { getSupabaseClient, isSupabaseConfigured } from '../../lib/supabaseClient'
+import type { Locale } from '@/i18n'
 
-export default function VerifyResend({ locale }: { locale: 'zh' | 'en' }) {
+export default function VerifyResend({ locale }: { locale: Locale }) {
   const [loading, setLoading] = useState(false)
   const [success, setSuccess] = useState(false)
   const [error, setError] = useState('')

@@ -1,10 +1,11 @@
 "use client"
 import { Button } from './ui/button'
 import { getSupabaseClient } from '../lib/supabaseClient'
+import type { Locale } from '@/i18n'
 import { useState, useEffect } from 'react'
 import { useRouter } from 'next/navigation'
 
-export default function EventRegisterForm({ locale, eventId }: { locale: 'zh' | 'en'; eventId: string }) {
+export default function EventRegisterForm({ locale, eventId }: { locale: Locale; eventId: string }) {
   const zh = locale==='zh'
   const [registered, setRegistered] = useState(false)
   const [loading, setLoading] = useState(false)

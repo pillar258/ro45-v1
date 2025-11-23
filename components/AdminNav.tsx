@@ -2,7 +2,9 @@
 import Link from 'next/link'
 import { usePathname } from 'next/navigation'
 
-export default function AdminNav({ locale }: { locale: 'zh' | 'en' }) {
+import type { Locale } from '@/i18n'
+
+export default function AdminNav({ locale }: { locale: Locale }) {
   const pathname = usePathname() || '/'
   const base = `/${locale}/admin`
   const items = [

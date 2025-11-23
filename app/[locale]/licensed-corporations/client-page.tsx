@@ -4,10 +4,10 @@ import { useState, useMemo, useTransition } from 'react';
 import { Input } from "@/components/ui/input";
 import { Checkbox } from "@/components/ui/checkbox";
 import { Label } from "@/components/ui/label";
-import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
+import { Card, CardHeader, CardTitle } from "@/components/ui/card";
 import { LicensedCorporation } from '@/types/licensed-corporation';
 import { getDictionary } from '@/lib/getDictionary';
-import { Locale } from '../../../../i18n';
+import { Locale } from '@/i18n';
 
 type Dictionary = Awaited<ReturnType<typeof getDictionary>>;
 
@@ -35,7 +35,7 @@ export default function LicensedCorporationsClientPage({ corporations, dictionar
   const [selectedTypes, setSelectedTypes] = useState<string[]>([]);
   const [isPending, startTransition] = useTransition();
 
-  const t = dictionary.licensed_corporations_page || {};
+  const t = (dictionary as any).licensed_corporations_page || {};
 
   const handleSearchChange = (event: React.ChangeEvent<HTMLInputElement>) => {
     startTransition(() => {

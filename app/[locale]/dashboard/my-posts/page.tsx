@@ -7,7 +7,7 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { PAGE_SIZE, parsePage } from '../../../../lib/pagination'
 import { createClient } from '../../../../utils/supabase/client'
-import { getPosts, type Post } from '../../../../lib/provider'
+import type { Post } from '../../../../lib/provider'
 
 export default function MyPostsPage({ params, searchParams }: { params: { locale: Locale }; searchParams: Record<string, string | string[] | undefined> }) {
   const l = params.locale
@@ -23,9 +23,16 @@ export default function MyPostsPage({ params, searchParams }: { params: { locale
       const supabase = createClient()
       const { data } = await supabase.auth.getUser()
       const userId = data.user?.id
-      const { items, totalPages } = await getPosts({ page, authorId: userId || undefined, status: statusFilter==='all'?undefined:statusFilter, search: q || undefined })
-      setItems(items)
-      setTotalPages(totalPages)
+      const from = Math.max(0, (page - 1) * PAGE_SIZE)
+      const to = from + PAGE_SIZE - 1
+      let query = supabase.from('posts').select('*', { count: 'exact' })
+      if (userId) query = query.eq('author_id', userId)
+      if (statusFilter !== 'all') query = query.eq('status', statusFilter)
+      if (q) query = query.ilike('title', `%${q}%`)
+      query = query.order('created_at', { ascending: false })
+      const { data: rows, count } = await query.range(from, to)
+      setItems((rows ?? []) as Post[])
+      setTotalPages(Math.max(1, Math.ceil((count ?? 0) / PAGE_SIZE)))
     }
     run()
   }, [page, q, statusFilter])

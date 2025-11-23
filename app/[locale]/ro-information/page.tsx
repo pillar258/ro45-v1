@@ -1,5 +1,5 @@
 import { getDictionary } from '@/lib/getDictionary';
-import { Locale } from '@/i18n-config';
+import { Locale } from '@/i18n';
 import RoInformationClientPage from './client-page';
 
 export default async function RoInformationPageWrapper({ params: { locale } }: { params: { locale: Locale } }) {

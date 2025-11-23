@@ -2,11 +2,12 @@
 import { useEffect, useState } from 'react'
 import { createClient } from '../utils/supabase/client'
 import clsx from 'clsx'
+import type { Locale } from '@/i18n'
 
 type Comment = { id: string; author_name?: string; content: string; created_at?: string }
 
-export default function CommentsList({ locale, postId, onRefreshed }: { locale: 'zh' | 'en'; postId: string; onRefreshed?: () => void }) {
-  const zh = locale==='zh'
+export default function CommentsList({ locale, postId, onRefreshed }: { locale: Locale; postId: string; onRefreshed?: () => void }) {
+  const zh = locale!=='en'
   const [items, setItems] = useState<Comment[]>([])
   const [page, setPage] = useState(1)
   const [totalPages, setTotalPages] = useState(1)

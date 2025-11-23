@@ -1,5 +1,5 @@
 import { getDictionary } from '@/lib/getDictionary';
-import { Locale } from '@/i18n-config';
+import { Locale } from '@/i18n';
 import { LicenseSaleForm } from '@/components/forms/LicenseSaleForm';
 
 export default async function LicenseSalePage({ params: { locale } }: { params: { locale: Locale } }) {

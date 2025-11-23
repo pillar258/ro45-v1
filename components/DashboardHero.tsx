@@ -18,7 +18,7 @@ const slideImages = [
   'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop',
 ]
 
-export default function DashboardHero({ dict }) {
+export default function DashboardHero({ dict }: { dict: any }) {
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
@@ -30,7 +30,7 @@ export default function DashboardHero({ dict }) {
   }, [dict.slides.length])
 
   const currentSlide = dict.slides[activeIndex]
-  const IconComponent = icons[currentSlide.icon_name]
+  const IconComponent = (icons as any)[currentSlide.icon_name]
 
   return (
     <section className="relative w-full h-[60vh] md:h-[70vh] text-white overflow-hidden">
@@ -52,7 +52,7 @@ export default function DashboardHero({ dict }) {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex space-x-3">
-        {dict.slides.map((_, index) => (
+        {dict.slides.map((_: any, index: number) => (
           <button
             key={index}
             onClick={() => setActiveIndex(index)}

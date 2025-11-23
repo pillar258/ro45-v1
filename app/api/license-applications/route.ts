@@ -1,9 +1,8 @@
-import { createRouteHandlerClient } from '@supabase/auth-helpers-nextjs';
-import { cookies } from 'next/headers';
+import { createClient } from '@/utils/supabase/server';
 import { NextResponse } from 'next/server';
 
 export async function POST(request: Request) {
-  const supabase = createRouteHandlerClient({ cookies });
+  const supabase = createClient();
   const formData = await request.json();
 
   // This is a public form, so we don't require a session to submit.

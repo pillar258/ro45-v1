@@ -10,5 +10,8 @@ function CardHeader({ className, ...props }: React.HTMLAttributes<HTMLDivElement
 function CardTitle({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
   return <div className={cn('text-2xl font-bold mt-2', className)} {...props} />
 }
+function CardContent({ className, ...props }: React.HTMLAttributes<HTMLDivElement>) {
+  return <div className={cn('mt-2', className)} {...props} />
+}
 
-export { Card, CardHeader, CardTitle }
+export { Card, CardHeader, CardTitle, CardContent }
