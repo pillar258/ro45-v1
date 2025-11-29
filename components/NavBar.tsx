@@ -86,10 +86,13 @@ export default function NavBar({ locale, navDict }: { locale: Locale, navDict: a
   return (
     <header className="border-b">
       <div className="container flex h-14 items-center justify-between">
-        <Link href={base} className="flex items-center gap-2 font-semibold text-brand-700">
-          <Landmark className="w-5 h-5" />
-          RO149
-        </Link>
+        <div className="flex items-center gap-4">
+          <Link href={base} className="flex items-center gap-2 font-semibold text-brand-700">
+            <Landmark className="w-5 h-5" />
+            RO149
+          </Link>
+          <span className="text-xs text-gray-500 hidden lg:inline-block">{navDict.slogan}</span>
+        </div>
         <nav className="flex gap-3 items-center">
           {link(`${base}/directory`, navDict.directory)}
           {link(`${base}/publish`, navDict.publish)}
