@@ -6,12 +6,6 @@
     "licenseSale": "License Transfer",
     "roInformation": "RO Information",
     "cptCourses": "CPT Courses",
-    "events": "Events",
-    "membership": "Membership",
-    "posts": "Posts",
-    "guestbook": "Guestbook",
-    "dashboard": "Dashboard",
-    "admin": "Admin",
     "login": "Login"
   },
   "hero": {
@@ -36,6 +30,43 @@
     "guestbook": "Guestbook",
     "posts": "Posts",
     "postDetail": "Post Detail"
+  },
+  "publish_page": {
+    "title": "Publish",
+    "subtitle": "",
+    "form": {
+      "publish_content": "Content Type",
+      "org_intro": "Company/Organization Introduction",
+      "business_info": "Business Information",
+      "other": "Other",
+      "org_type": "Organization Type",
+      "licensed_corp": "Licensed Corporation",
+      "cpa": "CPA Firm",
+      "law_firm": "Law Firm",
+      "compliance": "Compliance Consultant",
+      "description": "Description",
+      "description_placeholder": "Text input, within 1000 words",
+      "website": "Website (Optional)",
+      "address": "Address",
+      "phone": "Phone",
+      "email": "Email",
+      "image": "Image (Optional)",
+      "upload_image": "Upload Image",
+      "submit": "Submit",
+      "validation": {
+        "required": "Required",
+        "email_invalid": "Invalid email"
+      }
+    }
+  },
+  "directory_page": {
+    "title": "Directory",
+    "tabs": {
+      "introduction": "Company/Organization Introduction",
+      "business": "Business Information"
+    },
+    "pinned": "Pinned",
+    "views": "Views"
   },
   "about_page": {
     "title": "About Us",

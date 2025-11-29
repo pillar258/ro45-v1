@@ -31,6 +31,43 @@
     "posts": "文章",
     "postDetail": "文章详情"
   },
+  "publish_page": {
+    "title": "我要发布",
+    "subtitle": "",
+    "form": {
+      "publish_content": "发布内容",
+      "org_intro": "公司/机构介绍",
+      "business_info": "业务信息",
+      "other": "其他",
+      "org_type": "机构类型",
+      "licensed_corp": "持牌法团",
+      "cpa": "会计师事务所",
+      "law_firm": "律师行",
+      "compliance": "合规顾问",
+      "description": "公司介绍/业务说明",
+      "description_placeholder": "文字填写，1000字以内",
+      "website": "公司网址（如有）",
+      "address": "公司地址",
+      "phone": "电话",
+      "email": "邮箱",
+      "image": "图片（如有）",
+      "upload_image": "上传图片",
+      "submit": "提交发布",
+      "validation": {
+        "required": "此项必填",
+        "email_invalid": "邮箱格式不正确"
+      }
+    }
+  },
+  "directory_page": {
+    "title": "业务黄页",
+    "tabs": {
+      "introduction": "公司/机构介绍",
+      "business": "业务信息"
+    },
+    "pinned": "置顶",
+    "views": "浏览量"
+  },
   "about_page": {
     "title": "关于我们",
     "description": "一个为金融专业人士打造的开放式行业社区与发布平台。",

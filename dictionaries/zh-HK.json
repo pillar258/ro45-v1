@@ -1,17 +1,12 @@
 {
   "nav": {
     "home": "首頁",
+    "directory": "業務黃頁",
     "publish": "我要發布",
     "licenseAcquisition": "牌照獲取",
     "licenseSale": "牌照轉讓",
     "roInformation": "RO資訊",
     "cptCourses": "CPT課程",
-    "events": "活動",
-    "membership": "會員",
-    "posts": "文章",
-    "guestbook": "留言牆",
-    "dashboard": "會員中心",
-    "admin": "管理後台",
     "login": "登錄"
   },
   "hero": {
@@ -36,6 +31,43 @@
     "guestbook": "留言牆",
     "posts": "文章",
     "postDetail": "文章詳情"
+  },
+  "publish_page": {
+    "title": "我要發布",
+    "subtitle": "",
+    "form": {
+      "publish_content": "發布內容",
+      "org_intro": "公司/機構介紹",
+      "business_info": "業務信息",
+      "other": "其他",
+      "org_type": "機構類型",
+      "licensed_corp": "持牌法團",
+      "cpa": "會計師事務所",
+      "law_firm": "律師行",
+      "compliance": "合規顧問",
+      "description": "公司介紹/業務說明",
+      "description_placeholder": "文字填寫，1000字以內",
+      "website": "公司網址（如有）",
+      "address": "公司地址",
+      "phone": "電話",
+      "email": "郵箱",
+      "image": "圖片（如有）",
+      "upload_image": "上傳圖片",
+      "submit": "提交發布",
+      "validation": {
+        "required": "此項必填",
+        "email_invalid": "郵箱格式不正確"
+      }
+    }
+  },
+  "directory_page": {
+    "title": "業務黃頁",
+    "tabs": {
+      "introduction": "公司/機構介紹",
+      "business": "業務信息"
+    },
+    "pinned": "置頂",
+    "views": "瀏覽量"
   },
   "about_page": {
     "title": "關於我們",

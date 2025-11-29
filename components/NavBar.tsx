@@ -91,7 +91,8 @@ export default function NavBar({ locale, navDict }: { locale: Locale, navDict: a
           RO149
         </Link>
         <nav className="flex gap-3 items-center">
-          {link(`${base}/dashboard`, navDict.publish)}
+          {link(`${base}/directory`, navDict.directory)}
+          {link(`${base}/publish`, navDict.publish)}
           {link(`${base}/license-acquisition`, navDict.licenseAcquisition)}
           {link(`${base}/license-sale`, navDict.licenseSale)}
           {link(`${base}/ro-information`, navDict.roInformation)}
