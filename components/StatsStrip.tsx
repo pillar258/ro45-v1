@@ -2,7 +2,7 @@ import { TrendingUp, Users, CheckCircle } from 'lucide-react'
 
 export default function StatsStrip({ dict }: { dict: any }) {
   const items = [
-    { icon: TrendingUp, title: dict.marketTrends, value: 'CAF 173.96' },
+    { icon: TrendingUp, title: dict.marketTrends, value: '3,290' },
     { icon: Users, title: dict.membership, value: dict.membershipValue },
     { icon: CheckCircle, title: dict.compliance, value: dict.complianceValue }
   ]

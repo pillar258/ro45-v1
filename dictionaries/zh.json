@@ -169,11 +169,11 @@
     ]
   },
   "stats_strip": {
-    "marketTrends": "市场趋势",
-    "membership": "会员覆盖",
-    "membershipValue": "全球/区域/内地/香港",
-    "compliance": "合规教育",
-    "complianceValue": "动画/指引/实践"
+    "marketTrends": "持牌法团LC",
+    "membership": "负责人员RO",
+    "membershipValue": "9,556",
+    "compliance": "持牌代表LR",
+    "complianceValue": "35,306"
   },
   "partners_strip": {
     "title": "合作伙伴/会员单位"

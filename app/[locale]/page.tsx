@@ -1,6 +1,4 @@
 import StatsStrip from '@/components/StatsStrip'
-import PartnersStrip from '@/components/PartnersStrip'
-import CTASection from '@/components/CTASection'
 import { getDictionary } from '@/lib/getDictionary'
 import type { Locale } from '@/i18n'
 import DashboardHero from '@/components/DashboardHero'
@@ -74,8 +72,6 @@ export default async function HomePage({ params }: { params: { locale: Locale } 
     <div className="grid gap-10">
       <DashboardHero slides={slides} />
       <StatsStrip dict={dict.stats_strip} />
-      <PartnersStrip dict={dict.partners_strip} />
-      <CTASection dict={dict.cta_section} />
     </div>
   )
 }

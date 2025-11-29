@@ -175,11 +175,11 @@
     ]
   },
   "stats_strip": {
-    "marketTrends": "Market Trends",
-    "membership": "Membership",
-    "membershipValue": "Global/Regional/Mainland/HK",
-    "compliance": "Compliance & Education",
-    "complianceValue": "Animation/Guides/Practice"
+    "marketTrends": "Licensed Corporations (LC)",
+    "membership": "Responsible Officers (RO)",
+    "membershipValue": "9,556",
+    "compliance": "Licensed Representatives (LR)",
+    "complianceValue": "35,306"
   },
   "partners_strip": {
     "title": "Partners/Members"
