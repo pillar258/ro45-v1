@@ -1,6 +1,7 @@
 'use client';
 
 import { useState, useEffect } from 'react';
+import { useSearchParams } from 'next/navigation';
 import { Locale } from '@/i18n';
 import { Card } from '@/components/ui/card';
 import { BusinessListing } from '@/types/business-listing';
@@ -11,10 +12,10 @@ import clsx from 'clsx';
 // Simple Tabs implementation if UI component doesn't exist or is complex
 function SimpleTabs({ activeTab, onTabChange, dict }: { activeTab: string, onTabChange: (v: string) => void, dict: any }) {
   return (
-    <div className="flex space-x-1 rounded-xl bg-gray-100 p-1 mb-6">
+    <div className="flex space-x-1 rounded-xl bg-gray-100 p-1 mb-6 overflow-x-auto">
       <button
         className={clsx(
-          'w-full rounded-lg py-2.5 text-sm font-medium leading-5',
+          'flex-1 rounded-lg py-2.5 text-sm font-medium leading-5 whitespace-nowrap px-4',
           activeTab === 'introduction'
             ? 'bg-white text-brand-700 shadow'
             : 'text-gray-600 hover:bg-white/[0.12] hover:text-brand-600'
@@ -25,7 +26,7 @@ function SimpleTabs({ activeTab, onTabChange, dict }: { activeTab: string, onTab
       </button>
       <button
         className={clsx(
-          'w-full rounded-lg py-2.5 text-sm font-medium leading-5',
+          'flex-1 rounded-lg py-2.5 text-sm font-medium leading-5 whitespace-nowrap px-4',
           activeTab === 'business'
             ? 'bg-white text-brand-700 shadow'
             : 'text-gray-600 hover:bg-white/[0.12] hover:text-brand-600'
@@ -34,12 +35,24 @@ function SimpleTabs({ activeTab, onTabChange, dict }: { activeTab: string, onTab
       >
         {dict.directory_page.tabs.business}
       </button>
+      <button
+        className={clsx(
+          'flex-1 rounded-lg py-2.5 text-sm font-medium leading-5 whitespace-nowrap px-4',
+          activeTab === 'other'
+            ? 'bg-white text-brand-700 shadow'
+            : 'text-gray-600 hover:bg-white/[0.12] hover:text-brand-600'
+        )}
+        onClick={() => onTabChange('other')}
+      >
+        {dict.directory_page.tabs.other}
+      </button>
     </div>
   );
 }
 
 export default function BusinessListings({ locale, dict }: { locale: Locale; dict: any }) {
-  const [activeTab, setActiveTab] = useState('introduction');
+  const searchParams = useSearchParams();
+  const [activeTab, setActiveTab] = useState(searchParams.get('type') || 'introduction');
   const [listings, setListings] = useState<BusinessListing[]>([]);
   const [loading, setLoading] = useState(true);
 

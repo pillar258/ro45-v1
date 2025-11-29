@@ -1,8 +1,8 @@
 {
   "nav": {
-    "slogan": "An Open Industry Community and Information Platform for Financial Professionals",
+    "slogan": "An Open Industry Community and Information Publishing Platform for Financial Professionals",
     "home": "Home",
-    "publish": "Publish",
+    "publish": "Business Directory",
     "licenseAcquisition": "License Acquisition",
     "licenseSale": "License Transfer",
     "roInformation": "RO Information",
@@ -35,6 +35,21 @@
   "publish_page": {
     "title": "Publish",
     "subtitle": "",
+    "hub": {
+      "create_btn": "Create Listing",
+      "latest_updates": "Latest Updates",
+      "company_info": "Company Info",
+      "read_more": "View Details",
+      "more": "More",
+      "type_intro": "Intro",
+      "type_ro": "RO Info",
+      "type_cpt": "CPT Course",
+      "col_company": "Licensed Corp",
+      "col_org": "Professional Firms",
+      "col_business": "Business Info",
+      "col_intro": "Company/Org Intro",
+      "col_other": "Other"
+    },
     "form": {
       "publish_content": "Content Type",
       "org_intro": "Company/Organization Introduction",
@@ -64,7 +79,8 @@
     "title": "Directory",
     "tabs": {
       "introduction": "Company/Organization Introduction",
-      "business": "Business Information"
+      "business": "Business Information",
+      "other": "Other"
     },
     "pinned": "Pinned",
     "views": "Views"

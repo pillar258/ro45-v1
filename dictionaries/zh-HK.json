@@ -2,7 +2,7 @@
   "nav": {
     "slogan": "為金融人士打造的開放式行業社區與資訊發布平台",
     "home": "首頁",
-    "publish": "我要發布",
+    "publish": "業務黃頁",
     "licenseAcquisition": "牌照獲取",
     "licenseSale": "牌照轉讓",
     "roInformation": "RO資訊",
@@ -35,6 +35,21 @@
   "publish_page": {
     "title": "我要發布",
     "subtitle": "",
+    "hub": {
+      "create_btn": "我要發布",
+      "latest_updates": "最新動態",
+      "company_info": "企業信息",
+      "read_more": "查看詳情",
+      "more": "更多",
+      "type_intro": "機構介紹",
+      "type_ro": "RO資訊",
+      "type_cpt": "CPT課程",
+      "col_company": "持牌法團",
+      "col_org": "專業機構",
+      "col_business": "業務信息",
+      "col_intro": "公司/機構介紹",
+      "col_other": "其他"
+    },
     "form": {
       "publish_content": "發布內容",
       "org_intro": "公司/機構介紹",
@@ -64,7 +79,8 @@
     "title": "業務黃頁",
     "tabs": {
       "introduction": "公司/機構介紹",
-      "business": "業務信息"
+      "business": "業務信息",
+      "other": "其他"
     },
     "pinned": "置頂",
     "views": "瀏覽量"
