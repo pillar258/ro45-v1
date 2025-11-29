@@ -1,11 +1,9 @@
 {
   "nav": {
     "home": "Home",
-    "about": "About Us",
-    "licensedCoprorations": "Licensed Corporations",
-    "licenseApplication": "License Application",
-    "licenseSale": "License For Sale",
+    "publish": "Publish",
     "licenseAcquisition": "License Acquisition",
+    "licenseSale": "License Transfer",
     "roInformation": "RO Information",
     "cptCourses": "CPT Courses",
     "events": "Events",

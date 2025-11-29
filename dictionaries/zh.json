@@ -1,19 +1,11 @@
 {
   "nav": {
     "home": "首页",
-    "about": "关于我们",
-    "licensedCoprorations": "持牌法团",
-    "licenseApplication": "牌照申请",
-    "licenseSale": "牌照出售",
-    "licenseAcquisition": "牌照收购",
+    "publish": "我要发布",
+    "licenseAcquisition": "牌照获取",
+    "licenseSale": "牌照转让",
     "roInformation": "RO资讯",
     "cptCourses": "CPT课程",
-    "events": "活动",
-    "membership": "会员",
-    "posts": "文章",
-    "guestbook": "留言墙",
-    "dashboard": "会员中心",
-    "admin": "管理后台",
     "login": "登录"
   },
   "hero": {

@@ -1,11 +1,9 @@
 {
   "nav": {
     "home": "首頁",
-    "about": "關於我們",
-    "licensedCoprorations": "持牌法團",
-    "licenseApplication": "牌照申請",
-    "licenseSale": "牌照出售",
-    "licenseAcquisition": "牌照收購",
+    "publish": "我要發布",
+    "licenseAcquisition": "牌照獲取",
+    "licenseSale": "牌照轉讓",
     "roInformation": "RO資訊",
     "cptCourses": "CPT課程",
     "events": "活動",

@@ -11,32 +11,30 @@ const icons = {
   Building,
 }
 
-const slideImages = [
-  'https://images.unsplash.com/photo-1556761175-5973dc0f32e7?q=80&w=1600&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1542744173-8e7e53415bb0?q=80&w=1600&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1517048676732-d65bc937f952?q=80&w=1600&auto=format&fit=crop',
-  'https://images.unsplash.com/photo-1454165804606-c3d57bc86b40?q=80&w=1600&auto=format&fit=crop',
-]
-
-export default function DashboardHero({ dict }: { dict: any }) {
+export default function DashboardHero({ slides }: { slides: any[] }) {
   const [activeIndex, setActiveIndex] = useState(0)
 
   useEffect(() => {
+    if (!slides || slides.length === 0) return;
     const interval = setInterval(() => {
-      setActiveIndex((prevIndex) => (prevIndex + 1) % dict.slides.length)
+      setActiveIndex((prevIndex) => (prevIndex + 1) % slides.length)
     }, 5000) // Change slide every 5 seconds
 
     return () => clearInterval(interval)
-  }, [dict.slides.length])
+  }, [slides])
 
-  const currentSlide = dict.slides[activeIndex]
-  const IconComponent = (icons as any)[currentSlide.icon_name]
+  if (!slides || slides.length === 0) {
+    return null;
+  }
+
+  const currentSlide = slides[activeIndex]
+  const IconComponent = currentSlide.icon_name ? (icons as any)[currentSlide.icon_name] : null
 
   return (
     <section className="relative w-full h-[60vh] md:h-[70vh] text-white overflow-hidden">
       <div className="absolute inset-0 w-full h-full">
         <Image
-          src={slideImages[activeIndex]}
+          src={currentSlide.image}
           alt={currentSlide.title}
           fill
           className="object-cover"
@@ -52,7 +50,7 @@ export default function DashboardHero({ dict }: { dict: any }) {
       </div>
 
       <div className="absolute bottom-8 left-1/2 -translate-x-1/2 z-10 flex space-x-3">
-        {dict.slides.map((_: any, index: number) => (
+        {slides.map((_: any, index: number) => (
           <button
             key={index}
             onClick={() => setActiveIndex(index)}
