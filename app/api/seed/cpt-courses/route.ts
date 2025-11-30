@@ -1,31 +1,14 @@
-import { getDictionary } from '@/lib/getDictionary';
-import { Locale } from '@/i18n';
-import { createClient } from '@/utils/supabase/server';
-import Image from 'next/image';
-import { CptCourse } from '@/types/cpt-course';
 
-export default async function CptCoursesPage({ params: { locale } }: { params: { locale: Locale } }) {
-  const dictionary = await getDictionary(locale);
-  const t = dictionary.cpt_courses_page || {};
+import { createClient } from '@/utils/supabase/server';
+import { NextResponse } from 'next/server';
+
+export async function GET() {
   const supabase = createClient();
 
-  const { data: courses, error } = await supabase
-    .from('cpt_courses')
-    .select('*');
-
-  if (error) {
-    console.error('Error fetching CPT courses:', error);
-    return <div>Error loading courses.</div>;
-  }
-
-  // Static data as requested
-  /*
-  const staticCourses: CptCourse[] = [
+  // Data to seed
+  const courses = [
     // 1. Family Office
-
-
     {
-      id: '1-cantonese',
       title: '【粵語】全球家族辦公室戰略：香港樞紐與未來趨勢',
       description: '探討香港作為家族辦公室樞紐的戰略地位與未來發展趨勢。',
       image_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
@@ -36,7 +19,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
       external_link: 'https://appx5lm2o5a3336.h5.xiaoeknow.com/p/course/middle_page/v_68f9773fe4b0694ca1319eeb?resource_type=3'
     },
     {
-      id: '1-mandarin',
       title: '【普通话】全球家族办公室战略：香港枢纽与未来趋势',
       description: '探讨香港作为家族办公室枢纽的战略地位与未来发展趋势。',
       image_url: 'https://images.unsplash.com/photo-1486406146926-c627a92ad1ab?auto=format&fit=crop&w=800&q=80',
@@ -48,7 +30,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
     },
     // 2. KYC/DD
     {
-      id: '2-cantonese',
       title: '【粵語】投資人KYC與DD盡職調查：香港資本市場最佳實踐與虛擬資產案例研究',
       description: '深入解析KYC與DD在香港資本市場的應用及虛擬資產案例。',
       image_url: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80',
@@ -59,7 +40,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
       external_link: 'https://appx5lm2o5a3336.h5.xiaoeknow.com/p/course/middle_page/v_68f972fde4b0694ca1319df0?resource_type=3'
     },
     {
-      id: '2-mandarin',
       title: '【普通话】投资人KYC与DD尽职调查：香港资本市场最佳实践与虚拟资产案例研究',
       description: '深入解析KYC与DD在香港资本市场的应用及虚拟资产案例。',
       image_url: 'https://images.unsplash.com/photo-1450101499163-c8848c66ca85?auto=format&fit=crop&w=800&q=80',
@@ -71,7 +51,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
     },
     // 3. IPO
     {
-      id: '3-cantonese',
       title: '【粵語】香港IPO市場深度剖析：最新規則、實務案例、全球對比與前景預測',
       description: '全面剖析香港IPO市場規則、案例及未來前景。',
       image_url: 'https://images.unsplash.com/photo-1611974765270-ca1258634369?auto=format&fit=crop&w=800&q=80',
@@ -82,7 +61,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
       external_link: 'https://appx5lm2o5a3336.h5.xiaoeknow.com/p/course/middle_page/v_68f23e53e4b0694ca12e12d8?resource_type=3'
     },
     {
-      id: '3-mandarin',
       title: '【普通话】香港IPO市场深度剖析：最新规则、实务案例、全球对比与前景预测',
       description: '全面剖析香港IPO市场规则、案例及未来前景。',
       image_url: 'https://images.unsplash.com/photo-1611974765270-ca1258634369?auto=format&fit=crop&w=800&q=80',
@@ -94,7 +72,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
     },
     // 4. RWA
     {
-      id: '4-cantonese',
       title: '【粵語】真實世界資產(RWA)代幣化深度解析與前瞻',
       description: '解析RWA代幣化的機制、應用與未來發展。',
       image_url: 'https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&w=800&q=80',
@@ -105,7 +82,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
       external_link: 'https://appx5lm2o5a3336.h5.xiaoeknow.com/p/course/middle_page/v_68f2141de4b0694c5b3e1959?resource_type=3'
     },
     {
-      id: '4-mandarin',
       title: '【普通话】真实世界资产(RWA)代币化深度解析与前瞻',
       description: '解析RWA代币化的机制、应用与未来发展。',
       image_url: 'https://images.unsplash.com/photo-1621761191319-c6fb62004040?auto=format&fit=crop&w=800&q=80',
@@ -117,7 +93,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
     },
     // 5. Wealth Management
     {
-      id: '5-cantonese',
       title: '【粵語】香港財富管理新篇章：全球視野下的策略與前瞻',
       description: '探討全球視野下的香港財富管理策略。',
       image_url: 'https://images.unsplash.com/photo-1565514020176-db70525b9244?auto=format&fit=crop&w=800&q=80',
@@ -128,7 +103,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
       external_link: 'https://appx5lm2o5a3336.h5.xiaoeknow.com/p/course/middle_page/v_68f20a9ae4b0694ca12ded20?resource_type=3'
     },
     {
-      id: '5-mandarin',
       title: '【普通话】香港财富管理新篇章：全球视野下的策略与前瞻',
       description: '探讨全球视野下的香港财富管理策略。',
       image_url: 'https://images.unsplash.com/photo-1565514020176-db70525b9244?auto=format&fit=crop&w=800&q=80',
@@ -140,7 +114,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
     },
     // 6. ESG
     {
-      id: '6-cantonese',
       title: '【粵語】ESG投資與永續發展：香港現狀、全球比較及未來趨勢',
       description: '分析ESG投資在香港的現狀及未來趨勢。',
       image_url: 'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80',
@@ -151,7 +124,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
       external_link: 'https://appx5lm2o5a3336.h5.xiaoeknow.com/p/course/middle_page/v_68f257e0e4b0694ca12e1d4a?resource_type=3'
     },
     {
-      id: '6-mandarin',
       title: '【普通话】ESG投資與永續發展：香港現狀、全球比較及未來趨勢',
       description: '分析ESG投资在香港的现状及未来趋势。',
       image_url: 'https://images.unsplash.com/photo-1532601224476-15c79f2f7a51?auto=format&fit=crop&w=800&q=80',
@@ -163,7 +135,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
     },
     // 7. AML
     {
-      id: '7-cantonese',
       title: '【粵語】香港反洗錢與反恐怖融資(AML&CFT)全面培訓課程',
       description: '全面講解香港反洗錢與反恐怖融資法規與實務。',
       image_url: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80',
@@ -174,7 +145,6 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
       external_link: 'https://appx5lm2o5a3336.h5.xiaoeknow.com/p/course/middle_page/v_68f20a46e4b0694ca12decac?resource_type=3'
     },
     {
-      id: '7-mandarin',
       title: '【普通话】香港反洗錢與反恐怖融資(AML&CFT)全面培訓課程',
       description: '全面讲解香港反洗钱与反恐怖融资法规与实务。',
       image_url: 'https://images.unsplash.com/photo-1555949963-ff9fe0c870eb?auto=format&fit=crop&w=800&q=80',
@@ -185,67 +155,14 @@ export default async function CptCoursesPage({ params: { locale } }: { params: {
       external_link: 'https://appx5lm2o5a3336.h5.xiaoeknow.com/p/course/middle_page/v_68f2d33ee4b0694ca12e2a81?resource_type=3'
     }
   ];
-  */
 
-  const courseList: CptCourse[] = courses || [];
+  const { error } = await supabase
+    .from('cpt_courses')
+    .insert(courses);
 
-  return (
-    <div className="bg-gray-50">
-      <div className="container mx-auto px-4 py-12">
-        <div className="text-center mb-12">
-          <h1 className="text-4xl font-bold tracking-tight text-gray-900 sm:text-5xl">
-            {dictionary.nav.cptCourses}
-          </h1>
-          <p className="mt-4 text-lg leading-8 text-gray-600 max-w-2xl mx-auto">
-            {t.subtitle || 'Stay ahead with our professional CPT courses designed for financial practitioners.'}
-          </p>
-        </div>
+  if (error) {
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
 
-        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8">
-          {courseList.length === 0 ? (
-            <div className="col-span-full text-center text-gray-500">
-              <p>暂无课程</p>
-            </div>
-          ) : (
-            courseList.map((course) => (
-              <a
-                key={course.id}
-                href={course.external_link}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="group flex flex-col overflow-hidden rounded-lg border border-gray-200 bg-white shadow-sm hover:shadow-lg transition-shadow duration-300"
-              >
-                <div className="relative h-48 bg-gray-200">
-                  <Image
-                    src={course.image_url}
-                    alt={course.title}
-                    layout="fill"
-                    objectFit="cover"
-                    className="opacity-90 group-hover:opacity-100 transition-opacity"
-                  />
-                </div>
-                <div className="flex flex-1 flex-col p-4">
-                  <h3 className="text-lg font-semibold text-gray-900 mb-4 group-hover:text-indigo-600 transition-colors line-clamp-2">
-                    {course.title}
-                  </h3>
-                  <div className="mt-auto flex items-center justify-between text-sm text-gray-600">
-                    <div className="flex items-center gap-4">
-                      <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M3 5h12M9 3v2m1.204 8.845l-5 5m0 0l-5-5m5 5v-5m3.885-4.115A2 2 0 1114 10a2 2 0 01-2 2h-2.286" /></svg>
-                        {course.language || 'Cantonese'}
-                      </span>
-                      <span className="flex items-center gap-1">
-                        <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg"><path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" /></svg>
-                        {course.hours} {t.hours_label || 'Hours'}
-                      </span>
-                    </div>
-                  </div>
-                </div>
-              </a>
-            ))
-          )}
-        </div>
-      </div>
-    </div>
-  );
+  return NextResponse.json({ message: 'CPT courses seeded successfully', count: courses.length });
 }
