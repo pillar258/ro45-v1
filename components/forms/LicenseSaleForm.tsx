@@ -16,9 +16,13 @@ import { Form, FormField, FormItem, FormLabel, FormControl, FormMessage, FormDes
 // Define the schema for the form
 const createLicenseSaleSchema = (dict: any) => z.object({
   license_types: z.array(z.string()).nonempty({ message: dict.validation.license_types_required }),
-  has_legal_entity: z.string().nonempty({ message: dict.validation.field_required }),
-  has_bank_account: z.string().nonempty({ message: dict.validation.field_required }),
+  established_date: z.string().nonempty({ message: dict.validation.field_required }),
+  shareholder_count: z.coerce.number().min(0, { message: dict.validation.field_required }),
+  has_holding_structure: z.string().nonempty({ message: dict.validation.field_required }),
+  is_holding_company_sold: z.string().nonempty({ message: dict.validation.field_required }),
   ro_count: z.coerce.number().min(0, { message: dict.validation.field_required }),
+  employee_count: z.coerce.number().min(0, { message: dict.validation.field_required }),
+  total_compensation: z.string().nonempty({ message: dict.validation.field_required }),
   asking_price: z.coerce.number().positive({ message: dict.validation.positive_number_required }),
   contact_phone: z.string().nonempty({ message: dict.validation.phone_required }),
   email: z.string().email({ message: dict.validation.email_invalid }),
@@ -38,6 +42,8 @@ export function LicenseSaleForm({ dict }: { dict: any }) {
     defaultValues: {
       license_types: [],
       ro_count: 0,
+      shareholder_count: 0,
+      employee_count: 0,
     },
   });
 
@@ -70,7 +76,7 @@ export function LicenseSaleForm({ dict }: { dict: any }) {
 
   return (
     <Form {...form}>
-      <form onSubmit={form.handleSubmit(onSubmit)} className="not-prose space-y-8 mt-16 p-8 border rounded-lg bg-white shadow-md">
+      <form onSubmit={form.handleSubmit(onSubmit)} className="not-prose space-y-8 p-8 border rounded-lg bg-white shadow-md">
         <h2 className="text-2xl font-semibold border-b pb-4">{t.title}</h2>
 
         <FormField
@@ -120,10 +126,44 @@ export function LicenseSaleForm({ dict }: { dict: any }) {
         <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
             <FormField
               control={form.control}
-              name="has_legal_entity"
+              name="established_date"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-semibold">{t.established_date}</FormLabel>
+                  <FormControl>
+                    <Input type="date" {...field} />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="shareholder_count"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-semibold">{t.shareholder_count}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="number"
+                      value={typeof field.value === 'number' ? field.value : Number(field.value ?? 0)}
+                      onChange={e => field.onChange(Number((e.target as HTMLInputElement).value))}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <FormField
+              control={form.control}
+              name="has_holding_structure"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel className="font-semibold">{t.has_legal_entity}</FormLabel>
+                  <FormLabel className="font-semibold">{t.has_holding_structure}</FormLabel>
                   <FormControl>
                     <RadioGroup
                       onValueChange={field.onChange}
@@ -147,10 +187,10 @@ export function LicenseSaleForm({ dict }: { dict: any }) {
 
             <FormField
               control={form.control}
-              name="has_bank_account"
+              name="is_holding_company_sold"
               render={({ field }) => (
                 <FormItem className="space-y-3">
-                  <FormLabel className="font-semibold">{t.has_bank_account}</FormLabel>
+                  <FormLabel className="font-semibold">{t.is_holding_company_sold}</FormLabel>
                   <FormControl>
                     <RadioGroup
                       onValueChange={field.onChange}
@@ -166,6 +206,40 @@ export function LicenseSaleForm({ dict }: { dict: any }) {
                         <FormLabel className="font-normal">{dict.forms.no}</FormLabel>
                       </FormItem>
                     </RadioGroup>
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+        </div>
+
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+            <FormField
+              control={form.control}
+              name="employee_count"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-semibold">{t.employee_count}</FormLabel>
+                  <FormControl>
+                    <Input
+                      type="number"
+                      value={typeof field.value === 'number' ? field.value : Number(field.value ?? 0)}
+                      onChange={e => field.onChange(Number((e.target as HTMLInputElement).value))}
+                    />
+                  </FormControl>
+                  <FormMessage />
+                </FormItem>
+              )}
+            />
+
+            <FormField
+              control={form.control}
+              name="total_compensation"
+              render={({ field }) => (
+                <FormItem>
+                  <FormLabel className="font-semibold">{t.total_compensation}</FormLabel>
+                  <FormControl>
+                    <Input {...field} />
                   </FormControl>
                   <FormMessage />
                 </FormItem>

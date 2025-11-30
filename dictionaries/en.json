@@ -104,7 +104,8 @@
     },
     "cpt_courses_page": {
         "subtitle": "Stay ahead with our professional CPT courses designed for financial practitioners.",
-        "hours_label": "Hours"
+        "hours_label": "Hours",
+        "language_label": "Language"
     },
   "forms": {
     "submit": "Submit",
@@ -126,6 +127,11 @@
     "email": "Email",
     "wechat": "WeChat (Optional)",
     "license_types_sought": "License Types Sought",
+    "acquisition_method": "Acquisition Method",
+    "apply": "Apply",
+    "acquire": "Acquire",
+    "license_types_needed": "License Types Needed",
+    "other": "Other",
     "budget": "Budget (Optional)",
     "ro_profile_form": {
       "title": "I am an RO",
@@ -181,19 +187,23 @@
       "searching_button": "Searching..."
     },
     "license_sale_form": {
-      "title": "Sell a License",
+      "title": "License Transfer",
       "license_types": "License Types for Sale",
-      "license_types_desc": "Select the license types included in the sale.",
-      "has_legal_entity": "Includes Legal Entity?",
-      "has_bank_account": "Includes Bank Account?",
-      "ro_count": "Number of Responsible Officers (ROs)",
+      "license_types_desc": "Please select the license types included in this sale.",
+      "established_date": "Establishment Date",
+      "shareholder_count": "Number of Shareholders",
+      "has_holding_structure": "Holding Structure?",
+      "is_holding_company_sold": "Holding Company Included?",
+      "ro_count": "Number of ROs",
+      "employee_count": "Total Employees",
+      "total_compensation": "Total Compensation (Inc. RO)",
       "asking_price": "Asking Price (HKD)",
-      "asking_price_desc": "Enter the amount in Hong Kong Dollars.",
+      "asking_price_desc": "Please enter the amount in HKD.",
       "validation": {
         "license_types_required": "Please select at least one license type.",
         "field_required": "This field is required.",
         "positive_number_required": "Please enter a positive number.",
-        "phone_required": "Phone number is required.",
+        "phone_required": "Please enter a contact phone number.",
         "email_invalid": "Invalid email address."
       }
     }

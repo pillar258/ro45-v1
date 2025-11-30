@@ -11,7 +11,6 @@ export default async function LicenseAcquisitionPage({
 
   return (
     <div className="prose dark:prose-invert max-w-none">
-      <h1>{dict.nav.licenseAcquisition}</h1>
       <LicenseAcquisitionForm dict={dict} />
     </div>
   );

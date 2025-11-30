@@ -104,7 +104,8 @@
     },
     "cpt_courses_page": {
         "subtitle": "通過我們為金融從業者設計的專業CPT課程，保持行業領先地位。",
-        "hours_label": "小時"
+        "hours_label": "小時",
+        "language_label": "語言"
     },
   "forms": {
     "submit": "提交",
@@ -181,12 +182,16 @@
       "searching_button": "搜索中..."
     },
     "license_sale_form": {
-      "title": "出售牌照",
+      "title": "牌照轉讓",
       "license_types": "待售牌照類別",
       "license_types_desc": "請選擇此次出售包含的牌照類別。",
-      "has_legal_entity": "是否包含法人實體？",
-      "has_bank_account": "是否包含銀行賬戶？",
+      "established_date": "牌照成立日期",
+      "shareholder_count": "股東人數",
+      "has_holding_structure": "是否有控股架構？",
+      "is_holding_company_sold": "控股公司是否一同出售？",
       "ro_count": "負責人員（RO）數量",
+      "employee_count": "總員工數量",
+      "total_compensation": "總員工薪酬（包含RO）",
       "asking_price": "期望售價（港幣）",
       "asking_price_desc": "請輸入以港幣計價的金額。",
       "validation": {

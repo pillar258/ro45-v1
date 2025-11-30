@@ -104,7 +104,8 @@
     },
     "cpt_courses_page": {
         "subtitle": "通过我们为金融从业者设计的专业CPT课程，保持行业领先地位。",
-        "hours_label": "小时"
+        "hours_label": "小时",
+        "language_label": "语言"
     },
   "forms": {
     "submit": "提交",
@@ -126,6 +127,11 @@
     "email": "电子邮箱",
     "wechat": "微信号（选填）",
     "license_types_sought": "拟收购牌照类别",
+    "acquisition_method": "获取牌照方式",
+    "apply": "申请",
+    "acquire": "收购",
+    "license_types_needed": "拟获取牌照类型",
+    "other": "其他",
     "budget": "预算（选填）",
     "ro_profile_form": {
       "title": "我是RO",
@@ -181,12 +187,16 @@
       "searching_button": "搜索中..."
     },
     "license_sale_form": {
-      "title": "出售牌照",
+      "title": "牌照转让",
       "license_types": "待售牌照类别",
       "license_types_desc": "请选择此次出售包含的牌照类别。",
-      "has_legal_entity": "是否包含法人实体？",
-      "has_bank_account": "是否包含银行账户？",
+      "established_date": "牌照成立日期",
+      "shareholder_count": "股东人数",
+      "has_holding_structure": "是否有控股架构？",
+      "is_holding_company_sold": "控股公司是否一同出售？",
       "ro_count": "负责人员（RO）数量",
+      "employee_count": "总员工数量",
+      "total_compensation": "总员工薪酬（包含RO）",
       "asking_price": "期望售价（港币）",
       "asking_price_desc": "请输入以港币计价的金额。",
       "validation": {

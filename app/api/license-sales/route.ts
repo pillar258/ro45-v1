@@ -8,14 +8,34 @@ import { type NextRequest, NextResponse } from 'next/server';
 export async function POST(req: NextRequest) {
   const body = await req.json();
 
-  // Convert has_legal_entity and has_bank_account to boolean
-  const has_legal_entity = body.has_legal_entity === 'yes';
-  const has_bank_account = body.has_bank_account === 'yes';
+  const {
+    license_types,
+    established_date,
+    shareholder_count,
+    has_holding_structure,
+    is_holding_company_sold,
+    ro_count,
+    employee_count,
+    total_compensation,
+    asking_price,
+    contact_phone,
+    email,
+    wechat
+  } = body;
 
   const submissionData = {
-    ...body,
-    has_legal_entity,
-    has_bank_account,
+    license_types,
+    established_date,
+    shareholder_count,
+    has_holding_structure: has_holding_structure === 'yes',
+    is_holding_company_sold: is_holding_company_sold === 'yes',
+    ro_count,
+    employee_count,
+    total_compensation,
+    asking_price,
+    contact_phone,
+    email,
+    wechat
   };
 
   const supabaseAdmin = createAdminClient();

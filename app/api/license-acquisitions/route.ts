@@ -1,20 +1,26 @@
-import { createAdminClient } from '../../../utils/supabase/server';
+import { createAdminClient } from '@/utils/supabase/server';
 import { type NextRequest, NextResponse } from 'next/server';
 
 export async function POST(req: NextRequest) {
   try {
     const body = await req.json();
 
-    // 在此处可以添加 Zod 或其他方式的后端验证
-
     const submissionData = {
-      ...body,
+      acquirer_type: body.acquirer_type,
+      acquirer_name: body.acquirer_name,
+      contact_phone: body.contact_phone,
+      email: body.email,
+      wechat: body.wechat,
+      license_types_sought: body.license_types_sought,
+      acquisition_method: body.acquisition_method,
+      other_license_type: body.other_license_type,
+      budget: body.budget,
     };
 
     const supabaseAdmin = createAdminClient();
 
     const { data, error } = await supabaseAdmin
-      .from('license_acquisition_submissions')
+      .from('license_acquisitions')
       .insert([submissionData]);
 
     if (error) {
