@@ -2,7 +2,9 @@
   "nav": {
     "slogan": "为金融人士打造的开放式行业社区与资讯发布平台",
     "home": "首页",
-    "publish": "业务黄页",
+    "posts": "文章",
+    "publish": "我要发布",
+    "directory": "业务黄页",
     "licenseAcquisition": "牌照获取",
     "licenseSale": "牌照转让",
     "roInformation": "RO资讯",
@@ -33,7 +35,7 @@
     "postDetail": "文章详情"
   },
   "publish_page": {
-    "title": "我要发布",
+    "title": "业务发布",
     "subtitle": "",
     "hub": {
       "create_btn": "我要发布",

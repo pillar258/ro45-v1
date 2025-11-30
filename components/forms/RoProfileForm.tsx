@@ -122,8 +122,8 @@ export function RoProfileForm({ dict }: { dict: any }) {
   }));
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="not-prose space-y-8">
-      <h2 className="text-2xl font-semibold">{dict.forms.ro_profile_form.title}</h2>
+    <form onSubmit={handleSubmit(onSubmit)} className="not-prose space-y-8 p-8 border rounded-lg bg-white shadow-md">
+      <h2 className="text-2xl font-semibold border-b pb-4">{dict.forms.ro_profile_form.title}</h2>
       
       {/* Personal Information */}
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">

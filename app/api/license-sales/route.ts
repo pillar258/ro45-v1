@@ -1,4 +1,4 @@
-import { createAdminClient } from '../../../utils/supabase/server';
+import { createAdminClient, createClient } from '../../../utils/supabase/server';
 import { type NextRequest, NextResponse } from 'next/server';
 
 // The schema for the license_sale_submissions table
@@ -50,4 +50,43 @@ export async function POST(req: NextRequest) {
   }
 
   return NextResponse.json({ message: 'Submission successful' }, { status: 201 });
+}
+
+export async function GET(request: Request) {
+  const supabase = createClient();
+  const { searchParams } = new URL(request.url);
+  const page = parseInt(searchParams.get('page') || '1');
+  const limit = parseInt(searchParams.get('limit') || '10');
+  const sort = searchParams.get('sort') || 'time';
+  const offset = (page - 1) * limit;
+
+  let query = supabase
+    .from('license_sale_submissions')
+    .select('*', { count: 'exact' })
+    .order('is_pinned', { ascending: false });
+
+  if (sort === 'heat') {
+    query = query.order('views', { ascending: false });
+  } else {
+    query = query.order('created_at', { ascending: false });
+  }
+
+  query = query.range(offset, offset + limit - 1);
+
+  const { data, error, count } = await query;
+
+  if (error) {
+    console.error('Error fetching license sales:', error);
+    return NextResponse.json({ error: error.message }, { status: 500 });
+  }
+
+  return NextResponse.json({
+    data,
+    pagination: {
+      page,
+      limit,
+      total: count,
+      totalPages: Math.ceil((count || 0) / limit)
+    }
+  });
 }

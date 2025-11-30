@@ -51,15 +51,22 @@ export async function GET(request: Request) {
   const type = searchParams.get('type'); // e.g., 'introduction' or 'business'
   const page = parseInt(searchParams.get('page') || '1');
   const limit = parseInt(searchParams.get('limit') || '10');
+  const sort = searchParams.get('sort') || 'time';
   const offset = (page - 1) * limit;
 
   let query = supabase
     .from('business_listings')
     .select('*', { count: 'exact' })
     .eq('status', 'approved') // Only show approved listings
-    .order('is_pinned', { ascending: false }) // Pinned first
-    .order('created_at', { ascending: false }) // Then newest
-    .range(offset, offset + limit - 1);
+    .order('is_pinned', { ascending: false }); // Pinned first
+    
+  if (sort === 'heat') {
+    query = query.order('views', { ascending: false });
+  } else {
+    query = query.order('created_at', { ascending: false });
+  }
+
+  query = query.range(offset, offset + limit - 1);
 
   if (type) {
     // Use PostgreSQL array containment operator

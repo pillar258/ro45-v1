@@ -2,7 +2,8 @@
   "nav": {
     "slogan": "為金融人士打造的開放式行業社區與資訊發布平台",
     "home": "首頁",
-    "publish": "業務黃頁",
+    "publish": "我要發布",
+    "directory": "業務黃頁",
     "licenseAcquisition": "牌照獲取",
     "licenseSale": "牌照轉讓",
     "roInformation": "RO資訊",
@@ -33,7 +34,7 @@
     "postDetail": "文章詳情"
   },
   "publish_page": {
-    "title": "我要發布",
+    "title": "業務發布",
     "subtitle": "",
     "hub": {
       "create_btn": "我要發布",
