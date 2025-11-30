@@ -5,6 +5,8 @@ import { type NextRequest, NextResponse } from 'next/server';
 // We are not using Zod here for backend validation to keep it simple, 
 // but in a real-world scenario, you would validate the incoming data.
 
+export const dynamic = 'force-dynamic';
+
 export async function POST(req: NextRequest) {
   const body = await req.json();
 

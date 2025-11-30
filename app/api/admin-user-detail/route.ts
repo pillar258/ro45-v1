@@ -2,6 +2,8 @@ import { NextResponse } from 'next/server'
 import { isAdminSession } from '../../../lib/adminSession'
 import { createAdminClient } from '../../../utils/supabase/server'
 
+export const dynamic = 'force-dynamic'
+
 export async function GET(req: Request) {
   try {
     // 验证管理员权限
