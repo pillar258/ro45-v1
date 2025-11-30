@@ -70,11 +70,12 @@ export function LicenseAcquisitionForm({ dict }: { dict: any }) {
   };
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="not-prose space-y-6">
+    <form onSubmit={handleSubmit(onSubmit)} className="not-prose space-y-8 p-8 border rounded-lg bg-white shadow-md">
+      <h2 className="text-2xl font-semibold border-b pb-4">{dict.nav.licenseAcquisition}</h2>
       
       {/* Acquisition Method */}
       <div>
-        <Label className="mb-2 block">{dict.forms.acquisition_method}</Label>
+        <Label className="text-base font-semibold mb-4 block">{dict.forms.acquisition_method}</Label>
         <Controller
           name="acquisition_method"
           control={control}
@@ -110,37 +111,39 @@ export function LicenseAcquisitionForm({ dict }: { dict: any }) {
         {errors.acquisition_method && <p className="text-red-500 text-sm mt-1">{errors.acquisition_method.message}</p>}
       </div>
 
-      {/* Acquirer Type */}
-      <Controller
-        name="acquirer_type"
-        control={control}
-        render={({ field }) => (
-          <div className="space-y-2">
-            <Label>{dict.forms.applicant_type}</Label>
-            <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex gap-6">
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="company" id="acq_company" />
-                <Label htmlFor="acq_company" className="font-normal">{dict.forms.company}</Label>
-              </div>
-              <div className="flex items-center space-x-2">
-                <RadioGroupItem value="individual" id="acq_individual" />
-                <Label htmlFor="acq_individual" className="font-normal">{dict.forms.individual}</Label>
-              </div>
-            </RadioGroup>
-          </div>
-        )}
-      />
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Acquirer Type */}
+        <Controller
+          name="acquirer_type"
+          control={control}
+          render={({ field }) => (
+            <div className="space-y-3">
+              <Label className="font-semibold">{dict.forms.applicant_type}</Label>
+              <RadioGroup onValueChange={field.onChange} defaultValue={field.value} className="flex gap-6">
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="company" id="acq_company" />
+                  <Label htmlFor="acq_company" className="font-normal">{dict.forms.company}</Label>
+                </div>
+                <div className="flex items-center space-x-2">
+                  <RadioGroupItem value="individual" id="acq_individual" />
+                  <Label htmlFor="acq_individual" className="font-normal">{dict.forms.individual}</Label>
+                </div>
+              </RadioGroup>
+            </div>
+          )}
+        />
 
-      {/* Acquirer Name */}
-      <div>
-        <Label htmlFor="acquirer_name">{dict.forms.applicant_name}</Label>
-        <Input id="acquirer_name" {...register('acquirer_name')} className="mt-1" />
-        {errors.acquirer_name && <p className="text-red-500 text-sm mt-1">{errors.acquirer_name.message}</p>}
+        {/* Acquirer Name */}
+        <div>
+          <Label htmlFor="acquirer_name" className="font-semibold">{dict.forms.applicant_name}</Label>
+          <Input id="acquirer_name" {...register('acquirer_name')} className="mt-2" />
+          {errors.acquirer_name && <p className="text-red-500 text-sm mt-1">{errors.acquirer_name.message}</p>}
+        </div>
       </div>
 
       {/* License Types Needed */}
       <div>
-        <Label className="mb-2 block">{dict.forms.license_types_needed}</Label>
+        <Label className="text-base font-semibold mb-4 block">{dict.forms.license_types_needed}</Label>
         <div className="flex flex-wrap items-center gap-4">
             <Controller
               name="license_types_sought"
@@ -179,31 +182,33 @@ export function LicenseAcquisitionForm({ dict }: { dict: any }) {
 
       {/* Budget */}
       <div>
-        <Label htmlFor="budget">{dict.forms.budget}</Label>
-        <Input id="budget" {...register('budget')} className="mt-1" />
+        <Label htmlFor="budget" className="font-semibold">{dict.forms.budget}</Label>
+        <Input id="budget" {...register('budget')} className="mt-2" />
       </div>
 
-      {/* Contact Phone */}
-      <div>
-        <Label htmlFor="contact_phone">{dict.forms.contact_phone}</Label>
-        <Input id="contact_phone" {...register('contact_phone')} className="mt-1" />
-        {errors.contact_phone && <p className="text-red-500 text-sm mt-1">{errors.contact_phone.message}</p>}
-      </div>
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-8">
+        {/* Contact Phone */}
+        <div>
+          <Label htmlFor="contact_phone" className="font-semibold">{dict.forms.contact_phone}</Label>
+          <Input id="contact_phone" {...register('contact_phone')} className="mt-2" />
+          {errors.contact_phone && <p className="text-red-500 text-sm mt-1">{errors.contact_phone.message}</p>}
+        </div>
 
-      {/* Email */}
-      <div>
-        <Label htmlFor="email">{dict.forms.email}</Label>
-        <Input id="email" type="email" {...register('email')} className="mt-1" />
-        {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+        {/* Email */}
+        <div>
+          <Label htmlFor="email" className="font-semibold">{dict.forms.email}</Label>
+          <Input id="email" type="email" {...register('email')} className="mt-2" />
+          {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message}</p>}
+        </div>
       </div>
       
       {/* WeChat */}
       <div>
-        <Label htmlFor="wechat">{dict.forms.wechat}</Label>
-        <Input id="wechat" {...register('wechat')} className="mt-1" />
+        <Label htmlFor="wechat" className="font-semibold">{dict.forms.wechat}</Label>
+        <Input id="wechat" {...register('wechat')} className="mt-2" />
       </div>
 
-      <Button type="submit" disabled={isPending}>
+      <Button type="submit" disabled={isPending} className="w-full md:w-auto">
         {isPending ? dict.forms.submitting : dict.forms.submit}
       </Button>
     </form>

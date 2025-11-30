@@ -118,11 +118,15 @@ export function BusinessListingForm({ dict }: { dict: any }) {
   ];
 
   return (
-    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 bg-white p-6 rounded-lg border shadow-sm">
+    <form onSubmit={handleSubmit(onSubmit)} className="space-y-8 p-8 border rounded-lg bg-white shadow-md">
+      <div className="border-b pb-4">
+        <h2 className="text-2xl font-semibold">{dict.publish_page.title}</h2>
+        <p className="text-gray-600 mt-2">{dict.publish_page.subtitle}</p>
+      </div>
       
       {/* Content Type */}
       <div className="space-y-3">
-        <Label>{dict.publish_page.form.publish_content}</Label>
+        <Label className="text-base font-semibold">{dict.publish_page.form.publish_content}</Label>
         <Controller
           name="type"
           control={control}
@@ -150,7 +154,7 @@ export function BusinessListingForm({ dict }: { dict: any }) {
 
       {/* Organization Type */}
       <div className="space-y-3">
-        <Label>{dict.publish_page.form.org_type}</Label>
+        <Label className="text-base font-semibold">{dict.publish_page.form.org_type}</Label>
         <Controller
           name="category"
           control={control}
@@ -179,43 +183,49 @@ export function BusinessListingForm({ dict }: { dict: any }) {
       {/* Basic Info */}
       <div className="space-y-4">
         <div>
-          <Label htmlFor="description">{dict.publish_page.form.description}</Label>
+          <Label htmlFor="name" className="font-semibold mb-2 block">{dict.forms.applicant_name}</Label>
+          <Input id="name" {...register('name')} />
+          {errors.name && <p className="text-red-500 text-sm mt-1">{errors.name.message as string}</p>}
+        </div>
+
+        <div>
+          <Label htmlFor="description" className="font-semibold mb-2 block">{dict.publish_page.form.description}</Label>
           <Textarea 
             id="description" 
             {...register('description')} 
             placeholder={dict.publish_page.form.description_placeholder} 
             className="h-32"
           />
-          {errors.description && <p className="text-red-500 text-sm">{errors.description.message as string}</p>}
+          {errors.description && <p className="text-red-500 text-sm mt-1">{errors.description.message as string}</p>}
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-8">
             <div>
-            <Label htmlFor="website">{dict.publish_page.form.website}</Label>
+            <Label htmlFor="website" className="font-semibold mb-2 block">{dict.publish_page.form.website}</Label>
             <Input id="website" {...register('website')} />
-            {errors.website && <p className="text-red-500 text-sm">{errors.website.message as string}</p>}
+            {errors.website && <p className="text-red-500 text-sm mt-1">{errors.website.message as string}</p>}
             </div>
             <div>
-            <Label htmlFor="phone">{dict.publish_page.form.phone}</Label>
+            <Label htmlFor="phone" className="font-semibold mb-2 block">{dict.publish_page.form.phone}</Label>
             <Input id="phone" {...register('phone')} />
-            {errors.phone && <p className="text-red-500 text-sm">{errors.phone.message as string}</p>}
+            {errors.phone && <p className="text-red-500 text-sm mt-1">{errors.phone.message as string}</p>}
             </div>
         </div>
 
-        <div className="grid md:grid-cols-2 gap-4">
+        <div className="grid md:grid-cols-2 gap-8">
             <div>
-            <Label htmlFor="email">{dict.publish_page.form.email}</Label>
+            <Label htmlFor="email" className="font-semibold mb-2 block">{dict.publish_page.form.email}</Label>
             <Input id="email" {...register('email')} />
-            {errors.email && <p className="text-red-500 text-sm">{errors.email.message as string}</p>}
+            {errors.email && <p className="text-red-500 text-sm mt-1">{errors.email.message as string}</p>}
             </div>
             <div>
-            <Label htmlFor="address">{dict.publish_page.form.address}</Label>
+            <Label htmlFor="address" className="font-semibold mb-2 block">{dict.publish_page.form.address}</Label>
             <Input id="address" {...register('address')} />
             </div>
         </div>
 
         <div>
-          <Label htmlFor="image_upload">{dict.publish_page.form.image}</Label>
+          <Label htmlFor="image_upload" className="font-semibold mb-2 block">{dict.publish_page.form.image}</Label>
           <Input 
             id="image_upload" 
             type="file" 
@@ -226,7 +236,7 @@ export function BusinessListingForm({ dict }: { dict: any }) {
         </div>
       </div>
 
-      <Button type="submit" disabled={isPending} className="w-full">
+      <Button type="submit" disabled={isPending} className="w-full md:w-auto">
         {isPending ? dict.forms.submitting : dict.publish_page.form.submit}
       </Button>
     </form>
